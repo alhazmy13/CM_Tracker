@@ -1,9 +1,7 @@
-﻿using System.Runtime.Serialization;
-using Blish_HUD.Settings;
+﻿using Blish_HUD.Settings;
 using Newtonsoft.Json;
-using Microsoft.Xna.Framework.Graphics;
 
-namespace CM_Tracker.Persistance
+namespace falcon.cmtracker.Persistance
 {
 
     public enum BossType

@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
-using Blish_HUD.Modules.Managers;
-using static CM_Tracker.Module;
+using static falcon.cmtracker.Module;
 
-namespace CM_Tracker.Persistance
+namespace falcon.cmtracker.Persistance
 {
 
     internal class Bosses

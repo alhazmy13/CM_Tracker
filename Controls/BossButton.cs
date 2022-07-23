@@ -1,11 +1,11 @@
 ﻿using Blish_HUD;
 using Blish_HUD.Controls;
-using CM_Tracker.Persistance;
+using falcon.cmtracker.Persistance;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended.BitmapFonts;
 
-namespace CM_Tracker.Controls
+namespace falcon.cmtracker.Controls
 {
     public class BossButton : DetailsButton
     {

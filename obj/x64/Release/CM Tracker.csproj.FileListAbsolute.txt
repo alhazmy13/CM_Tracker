@@ -1,3 +1,6 @@
+C:\Users\me\projects\Cm Tracker\obj\x64\Release\falcon.cmtracker.Properties.Resources.resources
+C:\Users\me\projects\Cm Tracker\obj\x64\Release\CM Tracker.csproj.GenerateResource.cache
+C:\Users\me\projects\Cm Tracker\obj\x64\Release\CM Tracker.csproj.CoreCompileInputs.cache
 C:\Users\me\projects\Cm Tracker\bin\x64\Release\manifest.json
 C:\Users\me\projects\Cm Tracker\bin\x64\Release\CM Tracker.dll.config
 C:\Users\me\projects\Cm Tracker\bin\x64\Release\CM Tracker.dll
@@ -8,10 +11,6 @@ C:\Users\me\projects\Cm Tracker\bin\x64\Release\Flurl.pdb
 C:\Users\me\projects\Cm Tracker\bin\x64\Release\Flurl.xml
 C:\Users\me\projects\Cm Tracker\bin\x64\Release\Flurl.Http.pdb
 C:\Users\me\projects\Cm Tracker\bin\x64\Release\Flurl.Http.xml
-C:\Users\me\projects\Cm Tracker\obj\x64\Release\CM Tracker.csproj.AssemblyReference.cache
-C:\Users\me\projects\Cm Tracker\obj\x64\Release\CM_Tracker.Properties.Resources.resources
-C:\Users\me\projects\Cm Tracker\obj\x64\Release\CM Tracker.csproj.GenerateResource.cache
-C:\Users\me\projects\Cm Tracker\obj\x64\Release\CM Tracker.csproj.CoreCompileInputs.cache
 C:\Users\me\projects\Cm Tracker\obj\x64\Release\CM Tracker.csproj.CopyComplete
 C:\Users\me\projects\Cm Tracker\obj\x64\Release\CM Tracker.dll
 C:\Users\me\projects\Cm Tracker\obj\x64\Release\CM Tracker.pdb

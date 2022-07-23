@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Blish_HUD;
-using Blish_HUD.Content;
 using Blish_HUD.Controls;
 using Blish_HUD.Input;
 using Blish_HUD.Modules;
@@ -12,13 +10,12 @@ using Blish_HUD.Modules.Managers;
 using Blish_HUD.Settings;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using CM_Tracker.Controls;
-using CM_Tracker.Persistance;
+using falcon.cmtracker.Controls;
+using falcon.cmtracker.Persistance;
 using static Blish_HUD.GameService;
 using Color = Microsoft.Xna.Framework.Color;
-using Microsoft.Xna.Framework.Input;
 
-namespace CM_Tracker
+namespace falcon.cmtracker
 {
     [Export(typeof(Blish_HUD.Modules.Module))]
     public class Module : Blish_HUD.Modules.Module

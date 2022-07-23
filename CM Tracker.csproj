@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0094C4B5-BE24-4C38-B2AD-88A8B798CDB8}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>CM_Tracker</RootNamespace>
+    <RootNamespace>falcon.cmtracker</RootNamespace>
     <AssemblyName>CM Tracker</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -75,7 +75,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Utils\TaskUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AsyncClipboardService, Version=1.7.1.0, Culture=neutral, processorArchitecture=MSIL">
