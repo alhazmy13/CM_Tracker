@@ -1,0 +1,19 @@
+{
+  "name": "CM Tracker",
+  "version": "1.0.0",
+  "namespace": "CM_Tracker",
+  "package": "CM Tracker.dll",
+  "manifest_version": 1,
+
+  "description": "Manual CM Tracker For weekly clears.",
+  "dependencies": {
+    "bh.blishhud": ">=0.5.2"
+  },
+  "url": "https://github.com/xpend/CM_Tracker",
+  "contributors": [
+    {
+      "name": "Falcon",
+      "username": "Falcon.9283"
+    }
+  ]
+}
