@@ -8,6 +8,7 @@ using Blish_HUD.Input;
 using Blish_HUD.Modules;
 using Blish_HUD.Modules.Managers;
 using Blish_HUD.Settings;
+using Blish_HUD.ArcDps;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using falcon.cmtracker.Controls;
@@ -29,6 +30,7 @@ namespace falcon.cmtracker
         internal ContentsManager ContentsManager => this.ModuleParameters.ContentsManager;
         internal DirectoriesManager DirectoriesManager => this.ModuleParameters.DirectoriesManager;
         internal Gw2ApiManager Gw2ApiManager => this.ModuleParameters.Gw2ApiManager;
+        private  ArcDpsChecker _arcDpsChecker;
         #endregion
 
         [ImportingConstructor]
@@ -58,6 +60,13 @@ namespace falcon.cmtracker
             Strike_Kaineng_Overlook = selfManagedSettings.DefineSetting("Strike_Kaineng_Overlook", false);
             Strike_Harvest_Temple = selfManagedSettings.DefineSetting("Strike_Harvest_Temple", false);
 
+            _autoClearEnable = settings.DefineSetting(
+                "EnableAutoClears",
+                 true,
+                 "Enable Auto Clear",
+                 "When enabled, Module will auto detect when you cleard the cm boss using ArcDps"
+             );
+
 
 
         }
@@ -85,6 +94,7 @@ namespace falcon.cmtracker
         public static SettingEntry<bool> Strike_Kaineng_Overlook;
         public static SettingEntry<bool> Strike_Harvest_Temple;
 
+        private SettingEntry<bool> _autoClearEnable;
 
 
         #endregion
@@ -191,6 +201,16 @@ namespace falcon.cmtracker
 
             Overlay.UserLocaleChanged += ChangeLocalization;
 
+            _arcDpsChecker = new ArcDpsChecker(GameService.ArcDps, GameService.Overlay, GameService.Gw2Mumble);
+            _arcDpsChecker.ArcDpsTimedOut += (o, e) =>
+            {
+                Logger.Debug("Lost connexion to ArcDPS… Retrying.");
+                _arcDpsChecker.Enable();
+            };
+
+            GameService.ArcDps.Common.Activate();
+            _arcDpsChecker.Enable();
+
             // Base handler must be called
             base.OnModuleLoaded(e);
         }
@@ -198,7 +218,7 @@ namespace falcon.cmtracker
 
         protected override void Update(GameTime gameTime)
         {
-
+            _arcDpsChecker.Check(gameTime);
         }
 
         /// <inheritdoc />
