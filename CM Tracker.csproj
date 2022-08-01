@@ -127,9 +127,6 @@
     <None Include="manifest.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="mgfxc.deps.json" />
-    <None Include="mgfxc.runtimeconfig.dev.json" />
-    <None Include="mgfxc.runtimeconfig.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -169,7 +166,7 @@
       <HintPath>packages\Gapotchenko.FX.Threading.2021.1.5\lib\net472\Gapotchenko.FX.Threading.dll</HintPath>
     </Reference>
     <Reference Include="Gw2Sharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Gw2Sharp.1.7.0\lib\netstandard2.0\Gw2Sharp.dll</HintPath>
+      <HintPath>packages\Gw2Sharp.1.7.3\lib\netstandard2.0\Gw2Sharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -319,11 +316,6 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="BuildScripts\_DoNotModify.txt" />
-    <Content Include="CppNet.dll" />
-    <Content Include="libmojoshader_64.dll" />
-    <Content Include="mgfxc.dll" />
-    <Content Include="mgfxc.exe" />
-    <Content Include="mgfxc.pdb" />
     <Content Include="ref\deleted_item.png" />
     <Content Include="ref\icon_adina.png" />
     <Content Include="ref\icon_aetherblade_hideout.png" />
@@ -346,10 +338,6 @@
     <Content Include="ref\icon_twin_largos.png" />
     <Content Include="ref\icon_xunlai_jade.png" />
     <Content Include="ref\ns-button.png" />
-    <Content Include="SharpDX.D3DCompiler.dll" />
-    <Content Include="SharpDX.D3DCompiler.xml" />
-    <Content Include="SharpDX.dll" />
-    <Content Include="SharpDX.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
