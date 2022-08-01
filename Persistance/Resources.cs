@@ -10,15 +10,15 @@ namespace falcon.cmtracker.Persistance
     }
     public class Token
     {
-        [JsonProperty("id")] public int Id { get; set; }
+        public int Id { get; set; }
 
-        [JsonProperty("name")] public string Name { get; set; }
+        public string Name { get; set; }
 
 
-        [JsonProperty("icon")] public string Icon { get; set; }
+        public string Icon { get; set; }
         public BossType bossType { get; set; }
 
-        public SettingEntry<bool> setting { get; set; }
+        public SettingValue setting { get; set; }
 
     }
 }

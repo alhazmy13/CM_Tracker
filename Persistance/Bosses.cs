@@ -8,15 +8,15 @@ namespace falcon.cmtracker.Persistance
     internal class Bosses
     {
 
-        public Bosses()
+        public Bosses(List<SettingValue> setting)
         {
-            Tokens = GenrateTokens();
+            Tokens = GenrateTokens(setting);
 
         }
 
         [JsonProperty("tokens")] public IList<Token> Tokens { get; set; }
 
-        private List<Token> GenrateTokens()
+        private List<Token> GenrateTokens(List<SettingValue> setting)
         {
             var tokens = new List<Token>();
 
@@ -25,7 +25,7 @@ namespace falcon.cmtracker.Persistance
             Keep_Construct.Id = 77302;
             Keep_Construct.Name = "Keep Construct";
             Keep_Construct.Icon = "icon_keep_Construct.png";
-            Keep_Construct.setting = W3_Keep_Construct;
+            Keep_Construct.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Keep_Construct);
             Keep_Construct.bossType = BossType.Raid;
             tokens.Add(Keep_Construct);
 
@@ -33,7 +33,7 @@ namespace falcon.cmtracker.Persistance
             Cairn.Id = 77302;
             Cairn.Name = "Cairn";
             Cairn.Icon = "icon_cairn.png";
-            Cairn.setting = W4_Cairn;
+            Cairn.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Cairn);
             Cairn.bossType = BossType.Raid;
 
             tokens.Add(Cairn);
@@ -42,7 +42,7 @@ namespace falcon.cmtracker.Persistance
             Mursaat_Overseer.Id = 77302;
             Mursaat_Overseer.Name = "Mursaat Overseer";
             Mursaat_Overseer.Icon = "icon_mursaat_overseer.png";
-            Mursaat_Overseer.setting = W4_Mursaat_Overseer;
+            Mursaat_Overseer.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Mursaat_Overseer);
             Mursaat_Overseer.bossType = BossType.Raid;
             tokens.Add(Mursaat_Overseer);
 
@@ -50,7 +50,7 @@ namespace falcon.cmtracker.Persistance
             Samarog.Id = 77302;
             Samarog.Name = "Samarog";
             Samarog.Icon = "icon_samarog.png";
-            Samarog.setting = W4_Samarog;
+            Samarog.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Samarog);
             Samarog.bossType = BossType.Raid;
 
             tokens.Add(Samarog);
@@ -59,7 +59,7 @@ namespace falcon.cmtracker.Persistance
             Deimos.Id = 77302;
             Deimos.Name = "Deimos";
             Deimos.Icon = "icon_deimos.png";
-            Deimos.setting = W4_Deimos;
+            Deimos.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Deimos);
             Deimos.bossType = BossType.Raid;
 
             tokens.Add(Deimos);
@@ -68,7 +68,7 @@ namespace falcon.cmtracker.Persistance
             Soulless_Horror.Id = 77302;
             Soulless_Horror.Name = "Soulless Horror";
             Soulless_Horror.Icon = "icon_sh.png";
-            Soulless_Horror.setting = W5_Soulless_Horror;
+            Soulless_Horror.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Soulless_Horror);
             Soulless_Horror.bossType = BossType.Raid;
 
             tokens.Add(Soulless_Horror);
@@ -77,7 +77,7 @@ namespace falcon.cmtracker.Persistance
             Dhuum.Id = 77302;
             Dhuum.Name = "Dhuum";
             Dhuum.Icon = "icon_dhuum.png";
-            Dhuum.setting = W5_Dhuum;
+            Dhuum.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Dhuum);
             Dhuum.bossType = BossType.Raid;
 
             tokens.Add(Dhuum);
@@ -86,7 +86,7 @@ namespace falcon.cmtracker.Persistance
             Conjured_Amalgamate.Id = 77302;
             Conjured_Amalgamate.Name = "Conjured Amalgamate";
             Conjured_Amalgamate.Icon = "icon_ca.png";
-            Conjured_Amalgamate.setting = W6_Conjured_Amalgamate;
+            Conjured_Amalgamate.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Conjured_Amalgamate);
             Conjured_Amalgamate.bossType = BossType.Raid;
 
             tokens.Add(Conjured_Amalgamate);
@@ -95,7 +95,7 @@ namespace falcon.cmtracker.Persistance
             Twin_Largos.Id = 77302;
             Twin_Largos.Name = "Twin Largos";
             Twin_Largos.Icon = "icon_twin_largos.png";
-            Twin_Largos.setting = W6_Twin_Largos;
+            Twin_Largos.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Twin_Largos);
             Twin_Largos.bossType = BossType.Raid;
 
             tokens.Add(Twin_Largos);
@@ -104,7 +104,7 @@ namespace falcon.cmtracker.Persistance
             Qadim.Id = 77302;
             Qadim.Name = "Qadim";
             Qadim.Icon = "icon_qadim.png";
-            Qadim.setting = W6_Qadim;
+            Qadim.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Qadim);
             Qadim.bossType = BossType.Raid;
 
             tokens.Add(Qadim);
@@ -114,7 +114,7 @@ namespace falcon.cmtracker.Persistance
             Adina.Id = 77302;
             Adina.Name = "Adina";
             Adina.Icon = "icon_adina.png";
-            Adina.setting = W7_Adina;
+            Adina.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Adina);
             Adina.bossType = BossType.Raid;
 
             tokens.Add(Adina);
@@ -123,18 +123,18 @@ namespace falcon.cmtracker.Persistance
             Sabir.Id = 77302;
             Sabir.Name = "Sabir";
             Sabir.Icon = "icon_sabir.png";
-            Sabir.setting = W7_Sabir;
+            Sabir.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Sabir);
             Sabir.bossType = BossType.Raid;
 
             tokens.Add(Sabir);
 
-         
+
 
             var Qadim2 = new Token();
             Qadim2.Id = 77302;
             Qadim2.Name = "Qadim2";
             Qadim2.Icon = "icon_qadim2.png";
-            Qadim2.setting = W7_Qadim2;
+            Qadim2.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Qadim2);
             Qadim2.bossType = BossType.Raid;
 
             tokens.Add(Qadim2);
@@ -144,7 +144,7 @@ namespace falcon.cmtracker.Persistance
             Aetherblade_Hideout.Id = 77302;
             Aetherblade_Hideout.Name = "Aetherblade Hideout";
             Aetherblade_Hideout.Icon = "icon_aetherblade_hideout.png";
-            Aetherblade_Hideout.setting = Strike_Aetherblade_Hideout;
+            Aetherblade_Hideout.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Aetherblade_Hideout);
             Aetherblade_Hideout.bossType = BossType.Strike;
 
             tokens.Add(Aetherblade_Hideout);
@@ -153,7 +153,7 @@ namespace falcon.cmtracker.Persistance
             Xunlai_Jade_Junkyard.Id = 77302;
             Xunlai_Jade_Junkyard.Name = "Xunlai Jade Junkyard";
             Xunlai_Jade_Junkyard.Icon = "icon_xunlai_jade.png";
-            Xunlai_Jade_Junkyard.setting = Strike_Xunlai_Jade_Junkyard;
+            Xunlai_Jade_Junkyard.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Xunlai_Jade_Junkyard);
             Xunlai_Jade_Junkyard.bossType = BossType.Strike;
 
             tokens.Add(Xunlai_Jade_Junkyard);
@@ -162,7 +162,7 @@ namespace falcon.cmtracker.Persistance
             Kaineng_Overlook.Id = 77302;
             Kaineng_Overlook.Name = "Kaineng Overlook";
             Kaineng_Overlook.Icon = "icon_kaineng_overlook.png";
-            Kaineng_Overlook.setting = Strike_Kaineng_Overlook;
+            Kaineng_Overlook.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Kaineng_Overlook);
             Kaineng_Overlook.bossType = BossType.Strike;
 
             tokens.Add(Kaineng_Overlook);
@@ -171,7 +171,7 @@ namespace falcon.cmtracker.Persistance
             Harvest_Temple.Id = 77302;
             Harvest_Temple.Name = "Harvest Temple";
             Harvest_Temple.Icon = "icon_harvest_temple.png";
-            Harvest_Temple.setting = Strike_Harvest_Temple;
+            Harvest_Temple.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Harvest_Temple);
             Harvest_Temple.bossType = BossType.Strike;
 
             tokens.Add(Harvest_Temple);

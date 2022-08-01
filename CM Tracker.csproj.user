@@ -3,6 +3,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <StartAction>Program</StartAction>
     <StartProgram>C:\Users\me\Documents\gw2\HUD\Blish HUD.exe</StartProgram>
-    <StartArguments>--debug --settings "C:\Users\me\Documents\gw2\testmodule" --module "C:\Users\me\projects\Cm Tracker\bin\x64\Debug\CM Tracker.bhm"</StartArguments>
+    <StartArguments>--debug --settings "C:\Users\me\Documents\gw2\testmodule" --module "C:\Users\me\projects\CM_Tracker\bin\x64\Debug\CM Tracker.bhm"</StartArguments>
   </PropertyGroup>
 </Project>
