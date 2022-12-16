@@ -12,7 +12,7 @@ namespace falcon.cmtracker
         Soulless_Horror, Dhuum ,
         Conjured_Amalgamate,Twin_Largos, Qadim, 
         Sabir,Adina, Qadim2, 
-        Aetherblade_Hideout,Xunlai_Jade_Junkyard  ,Kaineng_Overlook  ,Harvest_Temple
+        Aetherblade_Hideout,Xunlai_Jade_Junkyard  ,Kaineng_Overlook  ,Harvest_Temple, Old
 }
     public class SettingValue: INotifyPropertyChanged
     {
@@ -146,7 +146,7 @@ namespace falcon.cmtracker
                     return Item;
                 }
             }
-            return null;
+            return SettingUtil.AddNewBoss(settingList, account, boss);
         }
 
         public List<SettingValue> GetSettingForAccount(string account)
@@ -177,9 +177,16 @@ namespace falcon.cmtracker
         {
             foreach (Boss boss in (Boss[])Enum.GetValues(typeof(Boss)))
             {
-              this.Setting.Add(new SettingValue(accountName, boss, false));
+                this.Setting.Add(new SettingValue(accountName, boss, false));
             }
             this.SettingString = ConvirtListToString(this.Setting);
+
+        }
+
+        static public SettingValue AddNewBoss(List<SettingValue> settingList, string account, Boss boss)
+        {
+            settingList.Add(new SettingValue(account, boss, false));
+            return settingList[settingList.Count - 1];
 
         }
 

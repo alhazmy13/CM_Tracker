@@ -352,6 +352,7 @@
     <Content Include="ref\icon_kaineng_overlook.png" />
     <Content Include="ref\icon_keep_Construct.png" />
     <Content Include="ref\icon_mursaat_overseer.png" />
+    <Content Include="ref\icon_old.png" />
     <Content Include="ref\icon_qadim.png" />
     <Content Include="ref\icon_qadim2.png" />
     <Content Include="ref\icon_raid.png" />

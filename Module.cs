@@ -92,7 +92,6 @@ namespace falcon.cmtracker
         private string SORTBY_ALL;
         private string SORTBY_STRIKES;
         private string SORTBY_RAID;
-        private string VisitUsAndHelpText;
         private string ClearCheckboxTooltipText;
 
         private string CurrentSortMethod;
@@ -113,6 +112,7 @@ namespace falcon.cmtracker
             {
                 _localSetting.AddNewAccount(LOCAL_ACCOUNT_NAME);
             }
+
             Gw2ApiManager.SubtokenUpdated += OnApiSubTokenUpdated;
             LoadTextures();
         }
@@ -121,6 +121,7 @@ namespace falcon.cmtracker
         {
             if (_myBossesClears != null) return;
             _myBossesClears = new Bosses(_localSetting.GetSettingForAccount(CURRENT_ACCOUNT.Value));
+
 
         }
 
@@ -550,6 +551,7 @@ namespace falcon.cmtracker
         {
             if (_myBossesClears.Tokens != null)
             {
+
                 contentPanel.ClearChildren();
                 foreach (var boss in _myBossesClears.Tokens)
                 {

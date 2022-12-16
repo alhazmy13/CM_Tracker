@@ -132,7 +132,7 @@ namespace falcon.cmtracker.Persistance
 
             var Qadim2 = new Token();
             Qadim2.Id = 77302;
-            Qadim2.Name = "Qadim2";
+            Qadim2.Name = "Qadim the Peerless";
             Qadim2.Icon = "icon_qadim2.png";
             Qadim2.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Qadim2);
             Qadim2.bossType = BossType.Raid;
@@ -175,6 +175,16 @@ namespace falcon.cmtracker.Persistance
             Harvest_Temple.bossType = BossType.Strike;
 
             tokens.Add(Harvest_Temple);
+
+            var Old = new Token();
+            Old.Id = 77302;
+            Old.Name = "Old Lion's Court";
+            Old.Icon = "icon_old.png";
+            Old.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Old);
+            Old.bossType = BossType.Strike;
+
+            tokens.Add(Old);
+
 
 
             return tokens;
