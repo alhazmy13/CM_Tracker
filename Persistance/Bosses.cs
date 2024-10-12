@@ -191,6 +191,7 @@ namespace falcon.cmtracker.Persistance
             Cosmic_Observatory.Icon = "icon_cosmic_observatory.png";
             Cosmic_Observatory.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Cosmic_Observatory);
             Cosmic_Observatory.bossType = BossType.Strike;
+            tokens.Add(Cosmic_Observatory);
 
             var Temple_Of_Febe = new Token();
             Temple_Of_Febe.Id = 77302;
@@ -198,6 +199,7 @@ namespace falcon.cmtracker.Persistance
             Temple_Of_Febe.Icon = "icon_temple_of_febe.png";
             Temple_Of_Febe.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Temple_Of_Febe);
             Temple_Of_Febe.bossType = BossType.Strike;
+            tokens.Add(Temple_Of_Febe);
 
 
 

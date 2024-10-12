@@ -346,6 +346,7 @@
     <Content Include="ref\icon_adina.png" />
     <Content Include="ref\icon_aetherblade_hideout.png" />
     <Content Include="ref\icon_ca.png" />
+    <Content Include="ref\icon_cosmic_observatory.png" />
     <Content Include="ref\icon_deimos.png" />
     <Content Include="ref\icon_dhuum.png" />
     <Content Include="ref\icon_harvest_temple.png" />
@@ -360,6 +361,7 @@
     <Content Include="ref\icon_samarog.png" />
     <Content Include="ref\icon_sh.png" />
     <Content Include="ref\icon_strike.png" />
+    <Content Include="ref\icon_temple_of_febe.png" />
     <Content Include="ref\icon_token.png" />
     <Content Include="ref\icon_cairn.png" />
     <Content Include="ref\icon_twin_largos.png" />
