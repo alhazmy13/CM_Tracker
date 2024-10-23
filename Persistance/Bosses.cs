@@ -10,16 +10,15 @@ namespace falcon.cmtracker.Persistance
 
         public Bosses(List<SettingValue> setting)
         {
-            Tokens = GenrateTokens(setting);
+            Tokens = GenerateTokens(setting);
 
         }
 
         [JsonProperty("tokens")] public IList<Token> Tokens { get; set; }
 
-        private List<Token> GenrateTokens(List<SettingValue> setting)
+        private List<Token> GenerateTokens(List<SettingValue> setting)
         {
             var tokens = new List<Token>();
-
 
             var Keep_Construct = new Token();
             Keep_Construct.Id = 77302;
@@ -28,6 +27,20 @@ namespace falcon.cmtracker.Persistance
             Keep_Construct.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Keep_Construct);
             Keep_Construct.bossType = BossType.Raid;
             tokens.Add(Keep_Construct);
+
+            tokens.AddRange(GenerateBastionOfThePenitent(setting));
+            tokens.AddRange(GenerateHallOfChains(setting));
+            tokens.AddRange(GenerateMythwrightGambit(setting));
+            tokens.AddRange(GenerateTheKeyOfAdashim(setting));
+            tokens.AddRange(GenerateEndOfDragons(setting));
+            tokens.AddRange(GenerateSecretsOfTheObscure(setting));
+
+            return tokens;
+        }
+
+        private List<Token> GenerateBastionOfThePenitent(List<SettingValue> setting)
+        {
+            var tokens = new List<Token>();
 
             var Cairn = new Token();
             Cairn.Id = 77302;
@@ -64,6 +77,13 @@ namespace falcon.cmtracker.Persistance
 
             tokens.Add(Deimos);
 
+            return tokens;
+        }
+
+        private List<Token> GenerateHallOfChains(List<SettingValue> setting)
+        {
+            var tokens = new List<Token>();
+
             var Soulless_Horror = new Token();
             Soulless_Horror.Id = 77302;
             Soulless_Horror.Name = "Soulless Horror";
@@ -81,6 +101,13 @@ namespace falcon.cmtracker.Persistance
             Dhuum.bossType = BossType.Raid;
 
             tokens.Add(Dhuum);
+
+            return tokens;
+        }
+
+        private List<Token> GenerateMythwrightGambit(List<SettingValue> setting)
+        {
+            var tokens = new List<Token>();
 
             var Conjured_Amalgamate = new Token();
             Conjured_Amalgamate.Id = 77302;
@@ -109,6 +136,12 @@ namespace falcon.cmtracker.Persistance
 
             tokens.Add(Qadim);
 
+            return tokens;
+        }
+
+        private List<Token> GenerateTheKeyOfAdashim(List<SettingValue> setting)
+        {
+            var tokens = new List<Token>();
 
             var Adina = new Token();
             Adina.Id = 77302;
@@ -126,9 +159,7 @@ namespace falcon.cmtracker.Persistance
             Sabir.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Sabir);
             Sabir.bossType = BossType.Raid;
 
-            tokens.Add(Sabir);
-
-
+            tokens.Add(Sabir);        
 
             var Qadim2 = new Token();
             Qadim2.Id = 77302;
@@ -139,6 +170,12 @@ namespace falcon.cmtracker.Persistance
 
             tokens.Add(Qadim2);
 
+            return tokens;
+        }
+
+        private List<Token> GenerateEndOfDragons(List<SettingValue> setting)
+        {
+            var tokens = new List<Token>();
 
             var Aetherblade_Hideout = new Token();
             Aetherblade_Hideout.Id = 77302;
@@ -185,9 +222,33 @@ namespace falcon.cmtracker.Persistance
 
             tokens.Add(Old);
 
+            return tokens;
+        }
 
+        private List<Token> GenerateSecretsOfTheObscure(List<SettingValue> setting)
+        {
+            var tokens = new List<Token>();
+
+            var Cosmic_Observatory = new Token();
+            Cosmic_Observatory.Id = 77302;
+            Cosmic_Observatory.Name = "Cosmic Observatory";
+            Cosmic_Observatory.Icon = "icon_cosmic_observatory.png";
+            Cosmic_Observatory.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Cosmic_Observatory);
+            Cosmic_Observatory.bossType = BossType.Strike;
+            tokens.Add(Cosmic_Observatory);
+
+            var Temple_Of_Febe = new Token();
+            Temple_Of_Febe.Id = 77302;
+            Temple_Of_Febe.Name = "Temple of Febe";
+            Temple_Of_Febe.Icon = "icon_temple_of_febe.png";
+            Temple_Of_Febe.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Temple_Of_Febe);
+            Temple_Of_Febe.bossType = BossType.Strike;
+            tokens.Add(Temple_Of_Febe);
 
             return tokens;
         }
     }
+
+    
+
 }

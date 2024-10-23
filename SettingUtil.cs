@@ -12,7 +12,8 @@ namespace falcon.cmtracker
         Soulless_Horror, Dhuum ,
         Conjured_Amalgamate,Twin_Largos, Qadim, 
         Sabir,Adina, Qadim2, 
-        Aetherblade_Hideout,Xunlai_Jade_Junkyard  ,Kaineng_Overlook  ,Harvest_Temple, Old
+        Aetherblade_Hideout,Xunlai_Jade_Junkyard  ,Kaineng_Overlook  ,Harvest_Temple, Old,
+        Cosmic_Observatory, Temple_Of_Febe
 }
     public class SettingValue: INotifyPropertyChanged
     {
