@@ -69,17 +69,11 @@ namespace falcon.cmtracker
             }
         }
         public event PropertyChangedEventHandler PropertyChanged;
-
-        //Overriten so combination of account+boss is used to ensure uniqueness in HashSets
-        public override int GetHashCode()
-        {
-            return (_account.GetHashCode() * 397) ^ _boss.GetHashCode();
-        }
     }
 
     class SettingUtil : INotifyPropertyChanged
     {
-        private HashSet<SettingValue> Setting = new HashSet<SettingValue>();
+        private HashSet<SettingValue> Setting = new HashSet<SettingValue>(new SettingValueComparer());
         private string _localSettingValue = "";
         public string SettingString
         {
