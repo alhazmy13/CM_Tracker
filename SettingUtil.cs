@@ -73,7 +73,7 @@ namespace falcon.cmtracker
 
     class SettingUtil : INotifyPropertyChanged
     {
-        private List<SettingValue> Setting = new List<SettingValue>();
+        private HashSet<SettingValue> Setting = new HashSet<SettingValue>(new SettingValueComparer());
         private string _localSettingValue = "";
         public string SettingString
         {
@@ -125,10 +125,10 @@ namespace falcon.cmtracker
                     break;
                 }
             }
-            this.SettingString = ConvirtListToString(this.Setting);
+            this.SettingString = ConvertHashToString(this.Setting);
         }
 
-        public String ConvirtListToString(List<SettingValue> arrayValues)
+        public String ConvertHashToString(HashSet<SettingValue> arrayValues)
         {
             var localValue = "";
             foreach (SettingValue Item in arrayValues)
@@ -180,7 +180,7 @@ namespace falcon.cmtracker
             {
                 this.Setting.Add(new SettingValue(accountName, boss, false));
             }
-            this.SettingString = ConvirtListToString(this.Setting);
+            this.SettingString = ConvertHashToString(this.Setting);
 
         }
 
@@ -207,7 +207,7 @@ namespace falcon.cmtracker
             {
                 Item.Value = false;
             }
-            this.SettingString = ConvirtListToString(this.Setting);
+            this.SettingString = ConvertHashToString(this.Setting);
         }
     }
 }
