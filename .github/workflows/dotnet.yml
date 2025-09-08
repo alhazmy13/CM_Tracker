@@ -27,4 +27,4 @@ jobs:
         run: nuget restore
 
       - name: Build Solution
-        run: msbuild.exe /p:platform="Any CPU" /p:configuration="Release"
+        run: msbuild.exe /p:platform="x64" /p:configuration="Release"
