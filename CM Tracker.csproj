@@ -140,6 +140,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SettingUtil.cs" />
+    <Compile Include="SettingValueComparer.cs" />
+    <Compile Include="UnixTimestampHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AsyncClipboardService, Version=1.7.1.0, Culture=neutral, processorArchitecture=MSIL">
