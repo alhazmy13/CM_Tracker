@@ -38,16 +38,19 @@ namespace falcon.cmtracker
         protected override void DefineSettings(SettingCollection settings)
         {
             var selfManagedSettings = settings.AddSubCollection("Managed Settings", false);
-
             CURRENT_ACCOUNT = selfManagedSettings.DefineSetting("CURRENT_ACCOUNT", LOCAL_ACCOUNT_NAME);
             CM_CLEARS = selfManagedSettings.DefineSetting("CM_CLEARS", "");
 
+            LAST_WEEKLY_RESET_TIMESTAMP_IN_SECONDS = settings.DefineSetting("LAST_WEEKLY_RESET_TIMESTAMP_IN_SECONDS", UnixTimestampHelper.getLatestWeeklyServerResetTimestampInSeconds());
+            SHOULD_AUTOMATICALLY_RESET_CLEARS = settings.DefineSetting("SHOULD_AUTOMATICALLY_RESET_CLEARS", true, () => "Reset clears on weekly reset", () => "Indicates if you want to automatically reset clears after weekly server reset.");       
         }
 
 
         #region Settings
         public static SettingEntry<string> CURRENT_ACCOUNT;
         public static SettingEntry<string> CM_CLEARS;
+        public static SettingEntry<long> LAST_WEEKLY_RESET_TIMESTAMP_IN_SECONDS;
+        public static SettingEntry<bool> SHOULD_AUTOMATICALLY_RESET_CLEARS;
 
 
 
@@ -259,7 +262,25 @@ namespace falcon.cmtracker
             FinishLoadingCmTrackerPanel(wndw, hPanel);
             pageLoading.Dispose();
 
+            HandleWeeklyReset();
+
             return hPanel;
+        }
+
+        private void HandleWeeklyReset()
+        {
+            long latestWeeklyServerReset = UnixTimestampHelper.getLatestWeeklyServerResetTimestampInSeconds();
+
+            if (latestWeeklyServerReset > LAST_WEEKLY_RESET_TIMESTAMP_IN_SECONDS.Value)
+            {
+                LAST_WEEKLY_RESET_TIMESTAMP_IN_SECONDS.Value = latestWeeklyServerReset;
+
+                if (SHOULD_AUTOMATICALLY_RESET_CLEARS.Value)
+                {
+                    clearAllBosses();
+                    CM_CLEARS.Value = _localSetting.SettingString;
+                }
+            }
         }
 
         private void RepositionTokens()
@@ -508,15 +529,7 @@ namespace falcon.cmtracker
             yesAllButton.Click += delegate
             {
 
-                foreach (var boss in _myBossesClears.Tokens)
-                {
-                    boss.setting.Value = false;
-                }
-                foreach (var BossButton in _displayedBosses)
-                {
-                    BossButton.Background = BossButton.Token.setting.Value ? Color.Green : Color.Black;
-                }
-                _localSetting.ResetAllValues();
+                clearAllBosses();
                 clearCheckbox.Visible = true;
                 confirmPanel.Visible = false;
             };
@@ -545,6 +558,19 @@ namespace falcon.cmtracker
             SetupBossClears();
 
 
+        }
+
+        private void clearAllBosses()
+        {
+            foreach (var boss in _myBossesClears.Tokens)
+            {
+                boss.setting.Value = false;
+            }
+            foreach (var BossButton in _displayedBosses)
+            {
+                BossButton.Background = BossButton.Token.setting.Value ? Color.Green : Color.Black;
+            }
+            _localSetting.ResetAllValues();
         }
 
         private void SetupBossClears()
