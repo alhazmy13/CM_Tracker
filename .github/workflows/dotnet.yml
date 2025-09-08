@@ -29,31 +29,11 @@ jobs:
       - name: Build Solution
         run: msbuild.exe /p:platform="x64" /p:configuration="Release"
         
-      # 🔽 NEW: find "obj\CM Tracker.zip", copy/rename to dist/CM.Tracker.bhm
-      - name: Package .bhm
-        shell: pwsh
-        run: |
-          # Find the first match of 'CM Tracker.zip' under any obj\ folder
-          $zip = Get-ChildItem -Path "$env:GITHUB_WORKSPACE" -Filter "CM Tracker.zip" -Recurse |
-                 Where-Object { $_.FullName -match "\\obj\\" } |
-                 Select-Object -First 1
-
-          if (-not $zip) {
-            Write-Error "Could not find 'CM Tracker.zip' under any 'obj\' folder."
-            exit 1
-          }
-
-          New-Item -ItemType Directory -Path "$env:GITHUB_WORKSPACE\dist" -Force | Out-Null
-          $bhm = Join-Path "$env:GITHUB_WORKSPACE\dist" "CM.Tracker.bhm"
-
-          Copy-Item $zip.FullName $bhm -Force
-
-          Write-Host "Packaged: $bhm"
 
       # 🔽 NEW: upload artifact so you can download it from the Actions run
-      - name: Upload .bhm artifact
+      - name: Upload .zip artifact
         uses: actions/upload-artifact@v4
         with:
-          name: CM.Tracker.bhm
-          path: dist/CM.Tracker.bhm
+          name: CM.Tracker.zip
+          path: obj/CM Tracker.zip
           if-no-files-found: error
