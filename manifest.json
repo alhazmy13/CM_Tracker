@@ -1,6 +1,6 @@
 {
   "name": "CM Tracker",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "namespace": "falcon.cmtracker",
   "package": "CM Tracker.dll",
   "manifest_version": "1",
@@ -27,3 +27,4 @@
     }
   }
 }
+
