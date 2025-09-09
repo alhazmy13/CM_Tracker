@@ -32,6 +32,7 @@ namespace falcon.cmtracker.Persistance
             tokens.AddRange(GenerateHallOfChains(setting));
             tokens.AddRange(GenerateMythwrightGambit(setting));
             tokens.AddRange(GenerateTheKeyOfAdashim(setting));
+            tokens.AddRange(GenerateTheMountBalrior(setting));
             tokens.AddRange(GenerateEndOfDragons(setting));
             tokens.AddRange(GenerateSecretsOfTheObscure(setting));
 
@@ -169,6 +170,40 @@ namespace falcon.cmtracker.Persistance
             Qadim2.bossType = BossType.Raid;
 
             tokens.Add(Qadim2);
+
+            return tokens;
+        }
+
+        private List<Token> GenerateTheMountBalrior(List<SettingValue> setting)
+        {
+            var tokens = new List<Token>();
+
+            var Greer = new Token();
+            Greer.Id = 77302;
+            Greer.Name = "Greer";
+            Greer.Icon = "icon_greer.png";
+            Greer.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Greer);
+            Greer.bossType = BossType.Raid;
+
+            tokens.Add(Greer);
+
+            var Decima = new Token();
+            Decima.Id = 77302;
+            Decima.Name = "Decima";
+            Decima.Icon = "icon_decima.png";
+            Decima.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Decima);
+            Decima.bossType = BossType.Raid;
+
+            tokens.Add(Decima);
+
+            var Ura = new Token();
+            Ura.Id = 77302;
+            Ura.Name = "Ura";
+            Ura.Icon = "icon_ura.png";
+            Ura.setting = SettingUtil.GetSettingForBoss(setting, Module.CURRENT_ACCOUNT.Value, Boss.Ura);
+            Ura.bossType = BossType.Raid;
+
+            tokens.Add(Ura);
 
             return tokens;
         }
